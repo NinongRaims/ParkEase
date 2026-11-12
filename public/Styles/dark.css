@@ -1,0 +1,126 @@
+/* Dark theme. The toggle button adds .dark-mode to <html> (see js/common.js + js/theme.js). */
+
+html.dark-mode { color-scheme: dark; }
+
+html.dark-mode body {
+    background-image: url(../Images/ParkEaseBackgroundDark.png);
+    color: #e8eefc;
+}
+
+/* glass cards */
+html.dark-mode :is(
+    .welcome-message, .reservation-form, .payment-summary, .recent-activity, .establishment-card,
+    .revenue, .reservations-main-stat, .slots-main-stat, .reservations-substats > div,
+    .slots-substats > div, .reservations-container, .table-card, .total-commissions,
+    .total-users, .total-establishments, .commission-table, .login-container
+) {
+    background-color: rgba(8, 16, 36, 0.58);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* form controls */
+html.dark-mode :is(
+    .where-forms input, .where-forms select, .when-forms input, .email-pass > input,
+    .password-field input, #add-slot-form input, .report-toolbar select
+) {
+    background-color: rgba(20, 34, 66, 0.85);
+    border-color: rgba(255, 255, 255, 0.22);
+    color: #e8eefc;
+}
+html.dark-mode ::placeholder { color: rgba(232, 238, 252, 0.55); }
+
+/* dividers + table lines */
+html.dark-mode :is(
+    .payment-total, .activity-item, .establishment-image, .reservations-table th,
+    .reservations-table td, .admin-table th, .admin-table td, .commission-table th,
+    .commission-table td
+) {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+html.dark-mode .activity-item { color: inherit; }
+html.dark-mode .commission-table td { background-color: rgba(255, 255, 255, 0.05); }
+
+/* round stat badges on the establishment overview */
+html.dark-mode :is(
+    .reservations-stat-number p, .slots-stat-number p, .incoming-stat-number p,
+    .completed-stat-number p, .reserved-stat-number p, .occupied-stat-number p
+) {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* login page links */
+html.dark-mode :is(.remember-forgot a, .login-register a, .password-field button) { color: #9fc2ff; }
+html.dark-mode .form-message.error   { color: #ff9aa2; }
+html.dark-mode .form-message.success { color: #8be0a4; }
+
+/* status chips */
+html.dark-mode .status.incoming,
+html.dark-mode .status.reserved    { background-color: rgba(120, 165, 255, 0.2); color: #a9c6ff; }
+html.dark-mode .status.ongoing     { background-color: rgba(255, 193, 7, 0.2);   color: #ffd75e; }
+html.dark-mode .status.completed,
+html.dark-mode .status.available,
+html.dark-mode .status-toggle.active   { background-color: rgba(70, 200, 110, 0.2); color: #8be0a4; }
+html.dark-mode .status.occupied,
+html.dark-mode .status-toggle.inactive { background-color: rgba(255, 100, 115, 0.2); color: #ff9aa2; }
+html.dark-mode .status.cancelled,
+html.dark-mode .status.maintenance { background-color: rgba(200, 200, 200, 0.16); color: #c4c9d4; }
+
+/* new pages */
+html.dark-mode .slot-card { background-color: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); }
+html.dark-mode .slot-btn  { background-color: rgba(255, 255, 255, 0.12); color: #e8eefc; }
+html.dark-mode .export-link { background-color: #2a5aa0; }
+
+/* ---------- header + side panel switch to the dark palette ---------- */
+.header, .side-panel, .darkMode-button, #account-menu, #notif-panel {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+html.dark-mode .header {
+    background-color: #0b1426;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+html.dark-mode .side-panel {
+    background-color: #0b1426;
+    box-shadow: 5px 0 22px rgba(0, 0, 0, 0.6);
+}
+/* (collapsed side panel stays transparent: its own rule is more specific) */
+html.dark-mode .darkMode-button { background: rgba(255, 255, 255, 0.05); border-top-color: rgba(255, 255, 255, 0.1); }
+html.dark-mode .menu-item:hover a,
+html.dark-mode .menu-item.active a { color: #0b1426; }
+html.dark-mode .profile img,
+html.dark-mode .admin-profile img { border-color: rgba(255, 255, 255, 0.35); }
+html.dark-mode #account-menu,
+html.dark-mode #notif-panel { background: #121e38; border: 1px solid rgba(255, 255, 255, 0.12); }
+html.dark-mode #pe-toast { background: #223b6b; }
+html.dark-mode #pe-toast.error { background: #a1212d; }
+html.dark-mode #pe-toast.success { background: #1b6e3a; }
+
+/* modals */
+html.dark-mode .pe-modal { background: #121e38; color: #e8eefc; border: 1px solid rgba(255, 255, 255, 0.12); }
+html.dark-mode .pe-modal h2, html.dark-mode .pe-modal h3 { color: #fff3b4; }
+html.dark-mode .pe-modal-close { background: rgba(255, 255, 255, 0.1); color: #fff3b4; }
+html.dark-mode .pe-form input, html.dark-mode .pe-form textarea {
+    background: rgba(20, 34, 66, 0.85); border-color: rgba(255, 255, 255, 0.22); color: #e8eefc;
+}
+html.dark-mode .pe-btn { background: #2a5aa0; }
+
+/* new pages */
+html.dark-mode :is(.booking-card, .map-panel, .map-side) {
+    background-color: rgba(8, 16, 36, 0.58);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+html.dark-mode .place-card { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); }
+html.dark-mode .place-card .distance { color: #9fc2ff; }
+html.dark-mode .place-actions a.secondary { color: #9fc2ff; border-color: #9fc2ff; }
+html.dark-mode .booking-actions button:not(.cancel-btn), html.dark-mode .booking-actions a,
+html.dark-mode .map-tools button, html.dark-mode .place-actions a:not(.secondary),
+html.dark-mode .location-fields button[type="submit"] { background-color: #2a5aa0; }
+html.dark-mode .location-card { background: rgba(8, 16, 36, 0.58); border-color: rgba(255, 255, 255, 0.12); }
+html.dark-mode .location-fields input { background-color: rgba(20, 34, 66, 0.85); border-color: rgba(255, 255, 255, 0.22); color: #e8eefc; }
+html.dark-mode .location-fields button[type="button"] { color: #9fc2ff; border-color: #9fc2ff; }
+html.dark-mode .status.pending { background-color: rgba(255, 193, 7, 0.2); color: #ffd75e; }
+html.dark-mode #map { filter: brightness(0.85) contrast(1.05); }
+html.dark-mode .leaflet-popup-content-wrapper, html.dark-mode .leaflet-popup-tip { background: #121e38; color: #e8eefc; }
+html.dark-mode .form-hint { color: #e8eefc; }

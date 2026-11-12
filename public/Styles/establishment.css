@@ -1,0 +1,372 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+body{
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0;
+    transition: padding-left 0.3s, padding-right 0.3s;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.main-content{
+    font-family: "Regular";
+}
+
+.top-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.revenue{
+    font-family: "Medium";
+    margin: 20px;
+    margin-bottom: 0;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.revenue h3, 
+.revenue p{
+    margin: 0;
+    font-size: 50px;
+}
+
+.revenue h3{
+    margin: 0;
+}
+
+.middle-section{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.reservations-main-stat,
+.slots-main-stat{
+    margin: 20px;
+    margin-bottom: 0;
+    padding: 20px 25px 30px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);   
+}
+
+.reservations-main-stat{
+    margin-right: 0;
+}
+
+.slots-main-stat{
+    margin-left: 0;
+}
+
+.reservations-main-stat h3,
+.slots-main-stat h3{
+    margin: 0;
+    font-size: 22px;
+}
+
+.reservations-stat-number,
+.slots-stat-number{
+    display: flex;
+    flex: 1;
+    margin: 20px 0 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservations-stat-number p,
+.slots-stat-number p{
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    padding: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Medium";
+    font-size: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+}
+
+.bottom-section{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.reservations-substats,
+.slots-substats{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 30px;
+}
+
+.incoming,
+.completed,
+.reserved,
+.occupied{
+    padding: 20px 20px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+}
+
+.incoming{
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.completed{
+    margin: 0;
+}
+
+.reserved{
+    margin: 0;
+}
+
+.occupied{
+    margin: 0 20px 0 0;
+}
+
+.incoming h3,
+.completed h3,
+.reserved h3,
+.occupied h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.incoming-stat-number,
+.completed-stat-number,
+.reserved-stat-number,
+.occupied-stat-number{
+    display: flex;
+    flex: 1;
+
+    margin-top: 15px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.incoming-stat-number p,
+.completed-stat-number p,
+.reserved-stat-number p,
+.occupied-stat-number p{
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Medium";
+    font-size: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    body{
+        padding-top: 65px;
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 100dvh;
+        box-sizing: border-box;
+    }
+
+    body:has(#side-toggle:checked){
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-content{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /*TOTAL REVENUE*/
+
+    .top-section{
+        display: flex;
+        width: 100%;
+    }
+
+    .revenue{
+        width: 100%;
+        margin: 15px;
+        margin-bottom: 0;
+        padding: 18px 20px;
+        min-height: 100px;
+        box-sizing: border-box;
+        border-radius: 18px;
+    }
+
+    .revenue h3,
+    .revenue p{
+        font-size: 25px;
+    }
+
+
+    /*MAIN STATISTICS*/
+
+    .middle-section{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .reservations-main-stat,
+    .slots-main-stat{
+        margin: 0;
+        padding: 18px 15px 20px;
+        min-height: 175px;
+        box-sizing: border-box;
+    }
+
+    .reservations-main-stat{
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .slots-main-stat{
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .reservations-main-stat h3,
+    .slots-main-stat h3{
+        font-size: 18px;
+    }
+
+    .reservations-stat-number,
+    .slots-stat-number{
+        margin-top: 15px;
+    }
+
+    .reservations-stat-number p,
+    .slots-stat-number p{
+        width: 20px;
+        height: 20px;
+        padding: 30px;
+        font-size: 38px;
+    }
+
+
+    /*BOTTOM STATISTICS*/
+
+    .bottom-section{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .reservations-substats,
+    .slots-substats{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .incoming,
+    .completed,
+    .reserved,
+    .occupied{
+        margin: 0;
+        padding: 18px 15px 20px;
+        min-height: 145px;
+        box-sizing: border-box;
+    }
+
+    .incoming{
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .completed{
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .reserved{
+        margin-left: 15px;
+        margin-right: 0;
+    }
+
+    .occupied{
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .incoming h3,
+    .completed h3,
+    .reserved h3,
+    .occupied h3{
+        font-size: 17px;
+    }
+
+    .incoming-stat-number,
+    .completed-stat-number,
+    .reserved-stat-number,
+    .occupied-stat-number{
+        margin-top: 10px;
+    }
+
+    .incoming-stat-number p,
+    .completed-stat-number p,
+    .reserved-stat-number p,
+    .occupied-stat-number p{
+        width: 18px;
+        height: 18px;
+        padding: 25px;
+        font-size: 32px;
+    }
+}

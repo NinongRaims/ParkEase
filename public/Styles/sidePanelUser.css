@@ -1,0 +1,316 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+.side-panel{
+    background-color: #1f4072;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Medium";
+    overflow: hidden;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.25);
+    z-index: 20;
+    transition: width 0.3s, box-shadow 0.3s;
+}
+
+.side-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent
+    );
+    pointer-events: none;
+}
+
+.side-panel:has(#side-toggle:checked)::after {
+    display: none;
+}
+
+#side-toggle {
+    display: none;
+}
+
+.side-head {
+    position: relative;
+    width: 100%;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: flex;
+    margin-top: 0;
+}
+
+.logo img{
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.close-side-button {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 35px;
+    height: 30px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.1s ease;
+}
+
+.close-side-button span {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 12px solid #fff3b4;
+    transition: transform 0.2s ease, border-right-color 0.1s ease;
+}
+
+.profile{
+    display: flex;
+    margin-top: 30px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.profile img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.menu-item{
+    margin-bottom: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 12px 0 0 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover{
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.menu-item::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff3b4;
+    transition: left 0.2s ease;
+}
+
+.menu-item:hover::before,
+.menu-item.active::before {
+    left: 0;
+}
+
+.menu-item:hover a,
+.menu-item.active a {
+    color: #1f4072;
+}
+
+.menu-item a{
+    text-decoration: none;
+    color: #fff3b4;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s ease;
+}
+
+.menu-item i {
+    min-width: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.menu-item span {
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.darkMode-button {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 5px 3px 5px 0;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    opacity: 1;
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.darkMode-button button{
+    padding: 0;
+    margin: 0;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff3b4;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.darkMode-button button:hover {
+    background-color: rgba(255, 243, 180, 0.30);
+    transform: translateY(-2px);
+}
+
+#side-toggle:checked ~ .profile,
+#side-toggle:checked ~ .menu,
+#side-toggle:checked ~ .darkMode-button {
+    display: none;
+    pointer-events: none;
+}
+
+.darkMode-button button:hover i {
+    transform: rotate(-15deg);
+}
+
+.darkMode-button button i {
+    transition: transform 0.3s ease;
+}
+
+.side-panel:has(#side-toggle:checked) {
+    width: 70px;
+    background: transparent;
+    box-shadow: none;
+}
+
+#side-toggle:checked ~ .side-head {
+    width: 70px;
+}
+
+#side-toggle:checked ~ .side-head .close-side-button {
+    right: 17px;
+}
+
+#side-toggle:checked ~ .side-head .close-side-button span {
+    transform: rotate(180deg);
+    border-color: transparent;
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    .side-panel{
+        width: 150px;
+        z-index: 30;
+    }
+
+    .side-head{
+        min-height: 65px;
+    }
+
+    .profile{
+        margin-top: 25px;
+    }
+
+    .profile img{
+        width: 85px;
+        height: 85px;
+    }
+
+    .menu{
+        margin-top: 25px;
+    }
+
+    .menu-item{
+        height: 48px;
+        margin-bottom: 15px;
+    }
+
+    .menu-item a{
+        font-size: 14px;
+    }
+
+    .menu-item i{
+        min-width: 43px;
+        font-size: 17px;
+    }
+
+    .button button{
+        width: 35px;
+        height: 35px;
+    }
+
+    .side-panel:has(#side-toggle:checked){
+        width: 70px;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    #side-toggle:checked ~ .side-head{
+        width: 70px;
+    }
+
+    #side-toggle:checked ~ .side-head .close-side-button{
+        right: 17px;
+    }
+}

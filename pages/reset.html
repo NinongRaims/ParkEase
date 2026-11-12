@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- The reset token is in this page's URL: never leak it to other sites through the Referer header. -->
+    <meta name="referrer" content="no-referrer">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/dark.css">
+    <script src="js/theme.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login">
+            <div class="logo">
+                <img src="Images/ParkEaseLogo.png" alt="ParkEase">
+            </div>
+
+            <form id="reset-form" style="display:flex;flex-direction:column" novalidate>
+                <p class="form-hint">Choose a new password for your account.</p>
+                <div class="email-pass">
+                    <div class="password-field">
+                        <input type="password" id="new-password" placeholder="New password (min. 8 characters)"
+                            autocomplete="new-password" minlength="8" maxlength="128" required>
+                    </div>
+                    <div class="password-field" style="margin-top:16px">
+                        <input type="password" id="confirm-password" placeholder="Confirm new password"
+                            autocomplete="new-password" maxlength="128" required>
+                    </div>
+                </div>
+
+                <p class="form-message" id="reset-message" role="alert"></p>
+
+                <div class="login-register">
+                    <button type="submit" id="reset-button">RESET PASSWORD</button>
+                    <a href="/" id="back-to-login">Back to login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/reset.js"></script>
+</body>
+
+</html>

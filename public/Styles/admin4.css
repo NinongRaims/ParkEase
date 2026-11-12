@@ -1,0 +1,49 @@
+/* Reports page (builds on adminTable.css) */
+
+.report-card { padding: 24px 0 12px; }
+
+.report-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px;
+    font-family: "Medium";
+    font-size: 18px;
+}
+
+.report-toolbar select {
+    padding: 8px 14px;
+    font-family: "Regular";
+    font-size: 17px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+}
+
+.export-link {
+    margin-left: auto;
+    padding: 10px 18px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #1f4072;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.export-link:hover { background-color: rgb(25, 89, 162); }
+
+.report-heading {
+    margin: 28px 24px 4px;
+    font-family: "Medium";
+    font-size: 22px;
+    font-weight: normal;
+}
+
+@media (max-width: 600px) {
+    .report-toolbar { padding: 0 16px; }
+    .export-link { margin-left: 0; }
+    .report-heading { margin-left: 16px; margin-right: 16px; }
+}

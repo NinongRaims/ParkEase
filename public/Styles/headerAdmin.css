@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+.header{
+    background-color: #1f4072;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 150px;
+    right: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    z-index: 10;
+    transition: left 0.3s;
+}
+
+body:has(#side-toggle:checked) .header {
+    left: 0px;
+}
+
+.left-section{
+    font-family: "Bold";
+    margin-left: 20px;
+    width: 200px;
+    color: #fff3b4;
+    transition: margin-left 0.3s;
+}
+
+body:has(#side-toggle:checked) .left-section {
+    margin-left: 80px;
+}
+
+.left-section h2{
+    margin: 0;
+}
+
+.right-section{
+    font-family: "Medium";
+    max-width: 360px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.right-section a{
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff3b4;
+}
+
+.right-section a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff3b4;
+    position: relative;
+    padding: 8px 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.right-section a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #fff3b4;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.right-section a:hover {
+    transform: translateY(-2px);
+}
+
+.right-section a:hover::after,
+.right-section a.active::after {
+    width: 100%;
+}
+
+.right-section span {
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    .header{
+        left: 0;
+        right: 0;
+        height: 65px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .left-section{
+        width: auto;
+        margin-left: 65px;
+    }
+
+    body:has(#side-toggle:checked) .left-section{
+        margin-left: 65px;
+    }
+
+    .left-section h2{
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .right-section{
+        max-width: none;
+        flex: 0 0 auto;
+        margin-right: 0;
+        justify-content: flex-end;
+    }
+
+    .right-section a{
+        margin-right: 0;
+        padding: 8px;
+        font-size: 0;
+    }
+
+    .right-section a i{
+        font-size: 18px;
+    }
+
+    .right-section span{
+        display: none;
+    }
+
+}

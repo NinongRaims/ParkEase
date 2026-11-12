@@ -1,0 +1,208 @@
+/* Shared additions used by every ParkEase page */
+
+.hidden { display: none !important; }
+
+/* ---------- feedback messages ---------- */
+.form-message {
+    min-height: 1.3em;
+    margin: 14px 0 0;
+    font-family: "Regular";
+    font-size: 16px;
+    text-align: center;
+}
+.form-message.error   { color: #b3261e; }
+.form-message.success { color: #1b6e3a; }
+
+#login-form, #register-form, #forgot-form { display: flex; flex-direction: column; }
+.form-hint { margin: 14px 0 0; font-family: "Regular"; font-size: 16px; text-align: center; opacity: 0.8; }
+
+.register-fields { margin-top: 15px; }
+.register-fields > input { margin-top: 16px; font-size: 18px; padding: 12px; }
+.register-fields .password-field { margin-top: 16px; }
+.register-fields .password-field input { font-size: 18px; padding: 12px; padding-right: 15px; }
+#register-form .login-register { margin-top: 24px; }
+
+#pe-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 20px);
+    max-width: min(92vw, 480px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-family: "Medium", sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background: #1f4072;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 1000;
+}
+#pe-toast.show { opacity: 1; transform: translate(-50%, 0); }
+#pe-toast.error   { background: #a1212d; }
+#pe-toast.success { background: #1b6e3a; }
+
+/* ---------- disabled buttons ---------- */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* ---------- account menu (opened from the header "Account" link) ---------- */
+#account-menu {
+    position: fixed;
+    top: 72px;
+    right: 14px;
+    width: 240px;
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 14px;
+    background: #1f4072;
+    color: #fff3b4;
+    font-family: "Medium", sans-serif;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    z-index: 60;
+}
+#account-menu[hidden] { display: none; }
+#account-menu strong { font-size: 18px; word-break: break-word; }
+#account-menu span { font-size: 14px; opacity: 0.85; word-break: break-all; }
+#account-menu .role-tag {
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: rgba(255, 243, 180, 0.18);
+    font-size: 12px;
+    opacity: 1;
+}
+#account-menu button {
+    margin: 12px 0 0;
+    padding: 9px 14px;
+    width: 100%;
+    font-family: "Medium", sans-serif;
+    font-size: 15px;
+    color: #fff3b4;
+    background: rgba(255, 255, 255, 0.14);
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor: pointer;
+}
+#account-menu button:hover { background: rgba(255, 255, 255, 0.24); transform: none; box-shadow: none; }
+
+/* ---------- misc ---------- */
+.billing-note {
+    margin: 6px 0 0;
+    font-size: 13px;
+    text-align: center;
+    opacity: 0.7;
+}
+.empty-cell, .empty-note { opacity: 0.7; font-style: italic; }
+.empty-note { padding: 20px; margin: 0; }
+
+/* ---------- status chips (the page CSS defines .status itself) ---------- */
+.status.completed   { background-color: rgba(40, 167, 69, 0.18);  color: #1b6e3a; }
+.status.cancelled   { background-color: rgba(120, 120, 120, 0.2); color: #555; }
+.status.available   { background-color: rgba(40, 167, 69, 0.18);  color: #1b6e3a; }
+.status.reserved    { background-color: rgba(31, 64, 114, 0.15);  color: #1f4072; }
+.status.occupied    { background-color: rgba(220, 53, 69, 0.15);  color: #a1212d; }
+.status.maintenance { background-color: rgba(120, 120, 120, 0.2); color: #555; }
+
+/* admin tables: clickable Active / Inactive toggle */
+.status-toggle {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 20px;
+    font-family: "Medium", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+.status-toggle:hover { filter: brightness(0.92); }
+.status-toggle.active   { background-color: rgba(40, 167, 69, 0.18); color: #1b6e3a; }
+.status-toggle.inactive { background-color: rgba(220, 53, 69, 0.15); color: #a1212d; }
+
+
+/* ---------- modal (About / Contact) ---------- */
+.pe-modal-overlay {
+    position: fixed; inset: 0; z-index: 900;
+    display: grid; place-items: center; padding: 16px;
+    background: rgba(8, 16, 36, 0.55);
+}
+.pe-modal {
+    position: relative; box-sizing: border-box;
+    width: min(560px, 100%); max-height: 88vh; overflow-y: auto;
+    padding: 26px 28px; border-radius: 18px;
+    background: #fff; color: #1b2433;
+    font-family: "Regular", sans-serif; font-size: 16px; line-height: 1.5;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+.pe-modal h2 { margin: 0 32px 12px 0; font-family: "Bold", sans-serif; color: #1f4072; font-size: 24px; }
+.pe-modal h3 { margin: 18px 0 6px; font-family: "Medium", sans-serif; color: #1f4072; font-size: 17px; }
+.pe-modal p { margin: 6px 0; }
+.pe-modal ol { margin: 6px 0; padding-left: 22px; }
+.pe-modal-close {
+    position: absolute; top: 14px; right: 14px; width: 34px; height: 34px;
+    border: none; border-radius: 50%; background: rgba(31, 64, 114, 0.1); color: #1f4072;
+    font-size: 16px; cursor: pointer;
+}
+.pe-modal-close:hover { background: rgba(31, 64, 114, 0.2); }
+.pe-modal-note { font-size: 14px; opacity: 0.7; margin: 0; }
+.pe-form { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.pe-form input, .pe-form textarea {
+    width: 100%; box-sizing: border-box; padding: 11px 14px;
+    font-family: "Regular", sans-serif; font-size: 16px; color: inherit;
+    border: 2px solid rgba(0, 0, 0, 0.15); border-radius: 10px; background: rgba(255, 255, 255, 0.8);
+    outline: none; resize: vertical;
+}
+.pe-form input:focus, .pe-form textarea:focus { border-color: #1f4072; }
+.pe-btn {
+    align-self: flex-start; padding: 10px 22px;
+    font-family: "Medium", sans-serif; font-size: 16px; color: #fff;
+    background: #1f4072; border: none; border-radius: 10px; cursor: pointer;
+}
+.pe-btn:hover { background: rgb(25, 89, 162); }
+
+/* ---------- notifications ---------- */
+.right-section a { position: relative; }
+.notif-badge {
+    position: absolute; top: -4px; right: -8px; min-width: 18px; height: 18px; padding: 0 5px;
+    box-sizing: border-box; border-radius: 9px;
+    background: #e5384b; color: #fff; font-family: "Medium", sans-serif; font-size: 11px;
+    line-height: 18px; text-align: center;
+}
+.notif-badge[hidden] { display: none; }
+#notif-panel {
+    position: fixed; top: 72px; right: 14px; z-index: 60;
+    width: min(360px, calc(100vw - 28px)); max-height: min(70vh, 520px);
+    display: flex; flex-direction: column; overflow: hidden;
+    border-radius: 14px; background: #1f4072; color: #fff3b4;
+    font-family: "Medium", sans-serif; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+#notif-panel[hidden] { display: none; }
+.notif-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 10px; }
+.notif-head strong { font-size: 18px; }
+#notif-panel .notif-readall { background: none; box-shadow: none; border: none; padding: 0; margin: 0; width: auto; height: auto; color: #fff3b4; text-decoration: underline; font-family: inherit; font-size: 13px; cursor: pointer; }
+#notif-panel .notif-readall:disabled { opacity: 0.4; cursor: default; }
+.notif-list { overflow-y: auto; padding: 0 8px 8px; }
+.notif-item {
+    display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; margin-bottom: 6px;
+    border-radius: 10px; background: rgba(255, 255, 255, 0.07); cursor: pointer;
+}
+.notif-item.unread { background: rgba(255, 243, 180, 0.16); border-left: 4px solid #fff3b4; }
+.notif-item strong { font-size: 15px; }
+.notif-item span { font-family: "Regular", sans-serif; font-size: 14px; color: #fff; opacity: 0.9; word-break: break-word; }
+.notif-item time { font-size: 12px; opacity: 0.65; }
+.notif-empty { margin: 8px 12px 16px; opacity: 0.8; }
+
+/* status chips for the new payment/booking states */
+.status.pending { background-color: rgba(255, 193, 7, 0.2); color: #8a6100; }
+
+/* payment banner on the New Reservation page */
+.pay-methods { margin: 8px 0 0; font-size: 13px; text-align: center; opacity: 0.7; }

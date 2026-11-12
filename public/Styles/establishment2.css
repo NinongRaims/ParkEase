@@ -1,0 +1,154 @@
+
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+body {
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0;
+    transition: padding-left 0.3s, padding-right 0.3s;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.main-content {
+    font-family: "Regular";
+    min-height: calc(100vh - 70px);
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* RESERVATIONS CARD */
+
+.reservations-container {
+    margin: 16px;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* TABLE */
+
+.reservations-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.reservations-table th,
+.reservations-table td {
+    padding: 25px 15px;
+    text-align: center;
+    font-size: 19px;
+}
+
+.reservations-table th {
+    font-family: "Medium";
+    font-size: 23px;
+    font-weight: normal;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.20);
+}
+
+.reservations-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.reservations-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* STATUS */
+
+.status {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-family: "Medium";
+    font-size: 15px;
+}
+
+.status.incoming {
+    background-color: rgba(31, 64, 114, 0.15);
+    color: #1f4072;
+}
+
+.status.ongoing {
+    background-color: rgba(255, 193, 7, 0.20);
+    color: #9a7100;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 65px;
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 100dvh;
+        box-sizing: border-box;
+    }
+
+    body:has(#side-toggle:checked) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        min-height: calc(100dvh - 65px);
+        box-sizing: border-box;
+    }
+
+    .reservations-container {
+        margin: 15px;
+        padding: 0;
+        min-height: calc(100dvh - 95px);
+    }
+
+    .reservations-table {
+        min-width: 900px;
+    }
+
+    .reservations-table th,
+    .reservations-table td {
+        padding: 20px 12px;
+        font-size: 16px;
+    }
+
+    .reservations-table th {
+        font-size: 18px;
+    }
+}

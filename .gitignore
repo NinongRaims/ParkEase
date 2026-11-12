@@ -1,0 +1,22 @@
+# Python (instance/ = local SQLite db, secret.key, outbox.log)
+.venv/
+venv/
+__pycache__/
+*.pyc
+instance/
+
+# Node / Netlify
+node_modules/
+dist/
+.netlify/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

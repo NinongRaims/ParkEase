@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+
+/* MAIN CONTENT */
+
+body {
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0;
+    transition: padding-left 0.3s ease, padding-right 0.3s ease;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+.main-content {
+    font-family: "Regular";
+    min-height: calc(100vh - 70px);
+}
+
+
+/* FIND PARKING (map) */
+
+.map-layout {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.map-panel, .map-side {
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+#map { height: calc(100vh - 190px); min-height: 360px; border-radius: 14px; background: #dfe6f2; z-index: 1; }
+.map-note { margin: 8px 4px 0; font-size: 14px; opacity: 0.75; }
+.map-note:empty { display: none; }
+
+.map-tools { margin-bottom: 12px; }
+.map-tools button {
+    width: 100%;
+    padding: 11px 16px;
+    font-family: "Medium";
+    font-size: 16px;
+    color: #fff;
+    background-color: #1f4072;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.map-tools button:hover { background-color: rgb(25, 89, 162); }
+
+.map-list { display: flex; flex-direction: column; gap: 12px; max-height: calc(100vh - 270px); overflow-y: auto; }
+
+.place-card {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+.place-card:hover, .place-card:focus-visible { border-color: #1f4072; transform: translateY(-2px); outline: none; }
+.place-card h3 { margin: 0 0 4px; font-family: "Medium"; font-size: 19px; }
+.place-card p { margin: 2px 0; font-size: 15px; opacity: 0.85; }
+.place-card .place-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; font-size: 15px; }
+.place-card .distance { font-family: "Medium"; color: #1f4072; }
+
+.place-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.place-actions a {
+    padding: 7px 14px;
+    font-family: "Medium";
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1f4072;
+    border-radius: 8px;
+}
+.place-actions a.secondary { background-color: transparent; color: #1f4072; border: 2px solid #1f4072; padding: 5px 12px; }
+.leaflet-popup-content .place-actions a { color: #fff; }
+.leaflet-popup-content .place-actions a.secondary { color: #1f4072; }
+.leaflet-popup-content h3 { margin: 0 0 4px; font-size: 17px; }
+.leaflet-popup-content p { margin: 2px 0; }
+
+@media (max-width: 800px) {
+    .map-layout { grid-template-columns: 1fr; margin: 15px; }
+    #map { height: 55vh; }
+    .map-list { max-height: none; }
+}

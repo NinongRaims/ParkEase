@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/dark.css">
+    <script src="js/theme.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login">
+            <div class="logo">
+                <img src="Images/ParkEaseLogo.png" alt="ParkEase">
+            </div>
+
+            <!-- LOGIN -->
+            <form id="login-form" novalidate>
+                <div class="email-pass">
+                    <input type="email" name="email" id="email" placeholder="Email" autocomplete="username" required>
+
+                    <div class="password-field">
+                        <input type="password" name="password" id="password" placeholder="Password"
+                            autocomplete="current-password" required>
+                        <button type="button" id="show-password" aria-label="Show password">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <div class="remember-checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+
+                    <a href="#" id="forgot-password">Forgot Password?</a>
+                </div>
+
+                <p class="form-message" id="login-message" role="alert"></p>
+
+                <div class="login-register">
+                    <button type="submit" id="login-button">LOGIN</button>
+
+                    <a href="#" id="show-register">Don't have an account yet?</a>
+                </div>
+            </form>
+
+            <!-- FORGOT PASSWORD -->
+            <form id="forgot-form" class="hidden" novalidate>
+                <p class="form-hint">Enter your account email and we'll send you a link to choose a new password.</p>
+                <div class="email-pass">
+                    <input type="email" id="forgot-email" placeholder="Email" autocomplete="email" maxlength="120" required>
+                </div>
+
+                <p class="form-message" id="forgot-message" role="alert"></p>
+
+                <div class="login-register">
+                    <button type="submit" id="forgot-button">SEND RESET LINK</button>
+
+                    <a href="#" id="forgot-back">Back to login</a>
+                </div>
+            </form>
+
+            <!-- REGISTER -->
+            <form id="register-form" class="hidden" novalidate>
+                <div class="email-pass register-fields">
+                    <input type="text" name="first_name" id="reg-first" placeholder="First Name" autocomplete="given-name" maxlength="50" required>
+                    <input type="text" name="last_name" id="reg-last" placeholder="Last Name" autocomplete="family-name" maxlength="50" required>
+                    <input type="email" name="email" id="reg-email" placeholder="Email" autocomplete="email" maxlength="120" required>
+                    <input type="tel" name="contact_number" id="reg-contact" placeholder="Contact Number" autocomplete="tel" maxlength="20" required>
+
+                    <div class="password-field">
+                        <input type="password" name="password" id="reg-password" placeholder="Password (min. 8 characters)"
+                            autocomplete="new-password" minlength="8" required>
+                    </div>
+                    <div class="password-field">
+                        <input type="password" name="confirm" id="reg-confirm" placeholder="Confirm Password"
+                            autocomplete="new-password" required>
+                    </div>
+                </div>
+
+                <p class="form-message" id="register-message" role="alert"></p>
+
+                <div class="login-register">
+                    <button type="submit" id="register-button">CREATE ACCOUNT</button>
+
+                    <a href="#" id="show-login">Already have an account?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

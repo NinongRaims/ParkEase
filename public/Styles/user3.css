@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+
+/* MAIN CONTENT */
+
+body {
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0;
+    transition: padding-left 0.3s ease, padding-right 0.3s ease;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+.main-content {
+    font-family: "Regular";
+    min-height: calc(100vh - 70px);
+}
+
+
+/* BOOKING LIST */
+
+.booking-list {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.booking-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 24px;
+    padding: 18px 22px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.booking-main { flex: 1 1 260px; min-width: 0; }
+.booking-main h3 { font-family: "Medium"; font-size: 22px; margin: 0 0 4px; }
+.booking-main p { margin: 2px 0; font-size: 16px; opacity: 0.85; }
+.booking-code { font-size: 13px; opacity: 0.6; }
+
+.booking-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; min-width: 150px; }
+.booking-amount { font-family: "Bold"; font-size: 24px; }
+.booking-pay { font-size: 13px; opacity: 0.75; }
+.booking-card .status { padding: 4px 14px; font-size: 14px; border-radius: 20px; }
+
+.booking-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.booking-actions button, .booking-actions a {
+    padding: 9px 18px;
+    font-family: "Medium";
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1f4072;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+.booking-actions button:hover, .booking-actions a:hover { background-color: rgb(25, 89, 162); }
+.booking-actions .cancel-btn { background-color: #a1212d; }
+.booking-actions .cancel-btn:hover { background-color: #c22a39; }
+
+@media (max-width: 600px) {
+    .booking-list { margin: 15px; }
+    .booking-side { align-items: flex-start; }
+}

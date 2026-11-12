@@ -1,0 +1,391 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+body{
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0; 
+    transition: padding-left 0.3s, padding-right 0.3s;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.main-content{
+    font-family: "Regular";
+}
+
+.welcome-message{
+    margin: 20px 20px 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+    line-height: 40px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-message p{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;;
+    font-size: 30px;
+}
+
+.welcome-message h1{
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    font-size: 50px;
+}
+
+.reservation-form{
+    margin: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+}
+
+.reservation-form h3{
+    margin: 30px 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.where-forms{
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;   
+}
+
+.where-forms input,
+.where-forms select{
+    width: 250px;
+    padding: 10px 15px;
+    font-family: "Regular";
+    font-size: 18px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.where-forms input:focus,
+.where-forms select:focus {
+    border-color: rgb(2, 76, 161);
+    box-shadow: 0 0 8px rgba(2, 76, 161, 0.3);
+}
+
+.when-forms{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 40px; 
+}
+
+.when-forms div{
+    display: flex;
+    flex-direction: column;
+}
+
+.when-forms input, 
+.when-forms label{
+    font-size: 18px;
+}
+
+.when-forms label {
+    font-weight: bold;
+}
+
+.when-forms input {
+    padding: 8px 10px;
+    font-family: "Regular";
+    font-size: 17px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.when-forms input:focus {
+    border-color: rgb(2, 76, 161);
+    box-shadow: 0 0 8px rgba(2, 76, 161, 0.3);
+}
+
+button{
+    font-family: "Medium";
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(2, 76, 161);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: rgb(1, 61, 130);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.bottom-content {
+    margin: 30px 20px 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.payment-summary {
+    flex: 1;
+    padding: 25px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+}
+
+.payment-summary h3 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.payment-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: 12px 5px ;
+}
+
+.payment-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 15px 15px 0;
+}
+
+.payment-summary button {
+    display: block;
+    margin: 20px auto 0;
+}
+
+.recent-activity {
+    flex: 1;
+    padding: 25px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+}
+
+.recent-activity h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    font-size: 16px;
+    color: black;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    body{
+        padding-top: 65px;
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 100dvh;
+        box-sizing: border-box;
+    }
+
+    body:has(#side-toggle:checked){
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-content{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /*WELCOME*/
+
+    .welcome-message{
+        margin: 15px;
+        padding: 15px 15px;
+        box-sizing: border-box;
+        line-height: normal;
+    }
+
+    .welcome-message p{
+        margin: 0 0 10px 5px;
+        font-size: 22px;
+    }
+
+    .welcome-message h1{
+        margin: 10px 5px 15px;
+        font-size: 30px;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+
+    /*RESERVATION FORM*/
+
+    .reservation-form{
+        margin: 15px;
+        padding: 20px 15px;
+        box-sizing: border-box;
+        line-height: normal;
+    }
+
+    .reservation-form h3{
+        margin: 0 0 20px;
+        font-size: 21px;
+    }
+
+    .where-forms{
+        width: 100%;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .where-forms input,
+.where-forms select{
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .when-forms{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .when-forms div{
+        width: 100%;
+    }
+
+    .when-forms label{
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+
+    .when-forms input{
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .reservation-form > button{
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 17px;
+        padding: 12px;
+    }
+
+    /*BOTTOM CONTENT*/
+
+    .bottom-content{
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .payment-summary,
+    .recent-activity{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .payment-summary h3,
+    .recent-activity h3{
+        font-size: 20px;
+    }
+
+    .payment-row{
+        font-size: 16px;
+        margin: 10px 5px;
+    }
+
+    .payment-total{
+        font-size: 18px;
+        margin-top: 15px;
+        padding: 12px 5px 0;
+    }
+
+    .payment-summary button{
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+
+    .activity-item{
+        font-size: 14px;
+        padding: 13px 5px;
+        gap: 10px;
+    }
+}

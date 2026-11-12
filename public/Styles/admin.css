@@ -1,0 +1,303 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+body{
+    margin: 0;
+    background-image: url(../Images/ParkEaseBackground.png);
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-left: 155px;
+    padding-right: 0;
+    transition: padding-left 0.3s, padding-right 0.3s;
+}
+
+body:has(#side-toggle:checked) {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.main-content{
+    font-family: "Regular";
+}
+
+.top-section{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.total-commissions{
+    margin: 20px;
+    margin-right: 0px;
+    padding: 20px 25px 30px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1.5;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+}
+
+.total-commissions h3{
+    font-size: 24px;
+    margin: 0;
+}
+
+.commission-price{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.commission-price p{
+    margin: 0;
+    font-family: "Medium";
+    font-size: 80px;
+}
+
+.total-users-establishments{
+    margin: 20px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+.total-users{
+    margin: 0;
+    padding: 20px 25px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+}
+
+.total-users h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.users-number{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.users-number p{
+    margin: 0;
+    font-family: "Medium";
+    font-size: 60px;
+}
+
+.total-establishments{
+    margin: 0;
+    padding: 20px 25px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+}
+
+.total-establishments h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.establishments-number{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.establishments-number p{
+    margin: 0px;
+    font-family: "Medium";
+    font-size: 60px;
+}
+
+.bottom-section{
+    display: flex;
+}
+
+.commission-table{
+    margin: 20px;
+    margin-top: 0;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    border-spacing: 0;
+    overflow: hidden;
+    backdrop-filter: blur(30px);
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+}
+
+.commission-table th,
+.commission-table td{
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.commission-table th{
+    font-family: "Medium";
+    font-size: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.commission-table td{
+    border-top: 1px solid rgba(0, 0, 0, 0.18);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+.commission-table tr:first-child th{
+    border-top: none;
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    body{
+        padding-top: 65px;
+        padding-left: 0;
+        padding-right: 0;
+        min-height: 100dvh;
+        box-sizing: border-box;
+    }
+
+    body:has(#side-toggle:checked){
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-content{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /*TOP SECTION*/
+
+    .top-section{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    /*TOTAL COMMISSIONS*/
+
+    .total-commissions{
+        margin: 15px;
+        margin-bottom: 0;
+        padding: 18px 20px 20px;
+        min-height: 145px;
+        box-sizing: border-box;
+    }
+
+    .total-commissions h3{
+        font-size: 21px;
+    }
+
+    .commission-price{
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .commission-price p{
+        font-size: 50px;
+    }
+
+
+    /*USERS + ESTABLISHMENTS*/
+
+    .total-users-establishments{
+        margin: 0 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .total-users,
+    .total-establishments{
+        margin: 0;
+        padding: 18px 15px 20px;
+        min-height: 145px;
+        box-sizing: border-box;
+    }
+
+    .total-users h3,
+    .total-establishments h3{
+        font-size: 17px;
+    }
+
+    .users-number,
+    .establishments-number{
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .users-number p,
+    .establishments-number p{
+        font-size: 45px;
+    }
+
+
+    /*COMMISSION TABLE*/
+
+    .bottom-section{
+        display: block;
+        margin-top: 30px;
+        padding: 0 15px 15px;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+
+    .commission-table{
+        margin: 0;
+        width: 100%;
+        min-width: 600px;
+    }
+
+    .commission-table th,
+    .commission-table td{
+        padding: 15px 12px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .commission-table th{
+        font-size: 16px;
+    }
+
+}

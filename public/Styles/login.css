@@ -1,0 +1,278 @@
+@font-face {
+    font-family: "Regular";
+    src: url("../Fonts/NationalPark-Regular.otf");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: url("../Fonts/NationalPark-Medium.otf");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url("../Fonts/NationalPark-Bold.otf");
+}
+
+body{
+    display: flex;
+    min-height: 100dvh;
+    overflow-y: auto;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    background-image: url("../Images/ParkEaseBackground.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container{
+    margin: auto;
+    display: flex;
+    width: 90%;
+    max-width: 500px;
+    padding: 60px 30px;
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 25px;
+    box-shadow: 0px 0px 30px rgba(89, 89, 93, 0.37);
+    box-sizing: border-box;
+}
+
+.login{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-family: "Regular";
+}
+
+.logo{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 150px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+.email-pass{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.email-pass > input{
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Regular";
+    font-size: 20px;
+    padding: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.email-pass > input:focus{
+    border-color: #1f4072;
+
+    box-shadow: 0 0 8px rgba(2, 76, 161, 0.3);
+}
+
+.password-field {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    font-family: "Regular";
+    font-size: 20px;
+    padding: 15px;
+    padding-right: 55px;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.password-field input:focus{
+    border-color: #1f4072;
+    box-shadow: 0 0 8px rgba(2, 76, 161, 0.3);
+}
+
+.password-field button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    color: #1f4072;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.password-field button:hover{
+    color: #1f4072;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.remember-forgot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Regular";
+    font-size: 17px;
+    margin-top:12px;
+}
+
+.remember-checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.remember-checkbox input{
+    width: 17px;
+    height: 17px;
+    accent-color: #1f4072;
+}
+
+.remember-forgot a{
+    text-decoration: none;
+    color: #1f4072;
+    transition: color 0.2s;
+}
+
+.remember-forgot a:hover{
+    color: rgb(25, 89, 162);
+}
+
+.login-register{
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+}
+
+.login-register button{
+    font-family: "Medium";
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1f4072;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.login-register button:hover{
+    background-color: rgb(25, 89, 162);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.login-register button:active{
+    transform: translateY(0);
+}
+
+
+.login-register a{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #1f4072;
+    display: flex;
+    justify-content: center;
+    font-family: "Regular";
+    transition: color 0.2s;
+}
+
+.login-register a:hover{
+    color: rgb(25, 89, 162);
+}
+
+/*MOBILE*/
+
+@media (max-width: 600px){
+
+    body{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .login-container{
+        width: 100%;
+        max-width: 420px;
+        padding: 40px 25px;
+        border-radius: 20px;
+    }
+
+    .logo img{
+        width: 120px;
+    }
+
+    .email-pass{
+        margin-top: 15px;
+    }
+
+    .email-pass > input{
+        margin-top: 25px;
+        font-size: 17px;
+        padding: 13px;
+    }
+
+    .password-field{
+        margin-top: 20px;
+    }
+
+    .password-field input{
+        font-size: 17px;
+        padding: 13px;
+        padding-right: 50px;
+    }
+
+    .password-field button{
+        right: 13px;
+        font-size: 17px;
+    }
+
+    .remember-forgot{
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .remember-checkbox input{
+        width: 15px;
+        height: 15px;
+    }
+
+    .login-register{
+        margin-top: 35px;
+    }
+
+    .login-register button{
+        font-size: 18px;
+        padding: 13px;
+    }
+
+    .login-register a{
+        margin-top: 17px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+
+}

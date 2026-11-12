@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User</title>
+    <link rel="stylesheet" href="Styles/user.css">
+    <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/sidePanelUser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/dark.css">
+    <script src="js/theme.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="header">
+        <div class="left-section">
+            <h2>New Reservation</h2>
+        </div>
+
+        <div class="right-section">
+            <a href="#" id="about-link">
+                <i class="fa-solid fa-circle-info"></i>
+                About
+            </a>
+            <span>&#124;</span>
+            <a href="#" id="contact-link">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+            <span>&#124;</span>
+            <a href="#" id="notifications-link">
+                <i class="fa-solid fa-bell"></i>
+                Notifications
+            </a>
+            <span>&#124;</span>
+            <a href="#" id="account-link">
+                <i class="fa-solid fa-user"></i>
+                Account
+            </a>
+        </div>
+    </div>
+    <!--HEADER-->
+
+    <!--SIDE PANEL-->
+    <div class="side-panel">
+        <input type="checkbox" class="checkbox" id="side-toggle">
+
+        <div class="side-head">
+            <div class="logo">
+                <img src="Images/ParkEaseLogo.png">
+            </div>
+
+            <label for="side-toggle" class="close-side-button">
+                <span></span>
+            </label>
+        </div>
+
+        <div class="profile">
+            <img src="Images/blankProfile.png">
+        </div>
+
+        <div class="menu">
+            <div class="menu-item active">
+                <a href="user.html">
+                    <i class="fa-solid fa-calendar-plus"></i> 
+                    New Reservation
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a href="user2.html">
+                    <i class="fa-solid fa-square-parking"></i>
+                    Slots Available
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a href="user3.html">
+                    <i class="fa-solid fa-ticket"></i>
+                    My Bookings
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a href="user4.html">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Find Parking
+                </a>
+            </div>
+
+        </div>
+
+        <div class="darkMode-button">
+            <button id="darkModeToggle" title="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+    <!--SIDE PANEL-->
+
+    <!--CONTENT-->
+    <div class="main-content">
+        <div class="welcome-message">
+            <p> Welcome Back!</p>  
+            <h1 id="welcome-name">&nbsp;</h1>
+        </div>
+
+        <div class="reservation-form">
+            <h3>Reservation Form</h3>
+            
+            <form class="where-forms" onsubmit="return false">
+                <select name="location" id="location" aria-label="Location" required>
+                    <option value="">Location</option>
+                </select>
+                <select name="slot" id="slot" aria-label="Slot" required disabled>
+                    <option value="">Slot</option>
+                </select>
+            </form>
+            
+            <form class="when-forms" onsubmit="return false">
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+
+                <div>
+                    <label for="arrival">Arrival:</label>
+                    <input type="time" id="arrival" name="arrival">
+                </div>
+
+                <div>
+                    <label for="departure">Departure:</label>
+                    <input type="time" id="departure" name="departure">
+                </div>
+            </form>
+
+            <button type="button" id="reserve-button">Reserve</button>
+        </div>
+
+        <div class="bottom-content">
+
+            <!-- PAYMENT SUMMARY -->
+            <div class="payment-summary">
+                <h3>Payment Summary</h3>
+
+                <div class="payment-row">
+                    <span>Location</span>
+                    <span id="summary-location">-</span>
+                </div>
+
+                <div class="payment-row">
+                    <span>Slot</span>
+                    <span id="summary-slot">-</span>
+                </div>
+
+                <div class="payment-row">
+                    <span>Rate</span>
+                    <span id="summary-rate">-</span>
+                </div>
+
+                <div class="payment-row">
+                    <span>Duration</span>
+                    <span id="summary-duration">0:00</span>
+                </div>
+
+                <div class="payment-total">
+                    <span>Pay:</span>
+                    <span id="summary-pay">₱0.00</span>
+                </div>
+                <p class="billing-note">Billed per hour; partial hours are rounded up.</p>
+
+                <button type="button" id="confirm-button" disabled>Pay Now</button>
+                <p class="pay-methods"><i class="fa-solid fa-lock"></i> Secure payment by GCash, Maya or card</p>
+            </div>
+
+
+            <!-- RECENT ACTIVITY -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+
+                <div id="activity-list"></div>
+            </div>
+        </div>
+    </div>
+    <!--CONTENT-->
+    <script src="js/common.js"></script>
+    <script src="js/user.js"></script>
+</body>
+</html>
