@@ -1,2 +1,9 @@
 * text=auto eol=lf
-*.webp *.png *.jpg *.jpeg *.gif *.woff *.woff2 *.ttf binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
